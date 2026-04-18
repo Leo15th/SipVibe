@@ -1,0 +1,574 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  user-select: none;
+  -moz-user-select: none;
+}
+section {
+  padding: 40px 60px;
+}
+body {
+  height: 200vh;
+}
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 100;
+}
+nav .logo a {
+  font-size: 30px;
+  color: white;
+  font-weight: 900;
+  text-decoration: underline;
+  text-transform: capitalize;
+  padding: 10px;
+  cursor: pointer;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+nav .logo a:hover {
+  font-size: 34px;
+  color: rgb(255, 213, 0);
+  text-shadow: 4px 4px 8px rgba(255, 213, 0, 0.5);
+}
+nav .logo a:active {
+  font-size: 28px;
+  color: rgb(255, 213, 0);
+}
+#mobileMenuIcon {
+  display: none;
+}
+nav .fa-bars,
+nav .fa-xmark {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+#mobileMenuContainer {
+  display: none;
+}
+#navContainer {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.navLinks {
+  display: flex;
+  gap: 30px;
+}
+.navLinks li {
+  list-style: none;
+}
+.navLinks li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+.navLinks li a:hover {
+  font-size: 22px;
+  font-weight: bolder;
+  color: rgb(255, 213, 0);
+}
+.authContainer {
+  display: flex;
+  gap: 20px;
+}
+.authContainer button {
+  font-size: 16px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.authContainer button:hover {
+  scale: 1.1;
+  margin: 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgb(255, 213, 0);
+  box-shadow: 3px 3px 8px rgba(255, 213, 0, 0.3);
+}
+
+#heroSection {
+  background:
+    linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
+    url("assets/hero.jpg") center;
+  background-size: cover;
+  padding: 150px;
+}
+#heroSection .heroContent {
+  margin: 0 auto;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border: 1px solid white;
+  padding: 60px;
+  border-radius: 20px;
+  max-width: 50%;
+  cursor: default;
+  animation: leftSlideIn 3s forwards;
+}
+#heroSection .heroContent:hover {
+  box-shadow: 5px 10px 15px rgba(255, 255, 255, 0.5);
+}
+#heroSection .heroContent h1 {
+  font-size: 48px;
+  font-weight: 900;
+  text-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
+}
+#heroSection .heroContent p {
+  font-size: 20px;
+  font-weight: 500;
+  text-shadow: 4px 4px 5px rgba(255, 255, 255, 0.5);
+}
+#heroSection .heroContent button {
+  font-size: 18px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  color: white;
+  border-radius: 4px;
+  cursor: not-allowed;
+}
+#heroSection .heroContent button:hover {
+  scale: 1.1;
+  margin: 0 10px;
+  font-size: 20px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgb(255, 213, 0);
+  box-shadow: 3px 3px 8px rgba(255, 213, 0, 0.3);
+}
+#categorySection{
+  background: linear-gradient(to right bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
+}
+#categorySection .sectionHeader{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 30px;
+}
+#categorySection .sectionHeader h2{
+  font-size: 40px;
+  color: white;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9);
+}
+#categorySection .sectionHeader p{
+  font-size: 20px;
+  color: white;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9);
+}
+#cardContainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px, 1fr));
+  padding: 30px;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 2s ease, opacity 2s ease;
+  gap: 30px;
+}
+#cardContainer.active{
+  transform: translateX(0);
+  opacity: 1;
+}
+#cardContainer .card{
+  height: 300px;
+  width: 200px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+#cardContainer .card:hover{
+  box-shadow: 5px 10px 15px rgba(255, 255, 255, 0.5), -10px -5px 15px rgba(0, 0, 0, 0.5);
+}
+#cardContainer .card h2{
+  position: absolute;
+  padding: 10px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  font-weight: 900;
+  color: rgb(255, 213, 0);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+  text-transform: capitalize;
+}
+#cardContainer .card img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+/* feature products section*/
+#futureProducts {
+  background: gray;
+  padding: 60px 30px;
+}
+
+#futureProducts .sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+  text-align: center;
+}
+
+#futureProducts .sectionHeader h2 {
+  font-size: 40px;
+  color: white;
+  text-shadow: 4px 4px 10px rgba(0,0,0,0.9);
+}
+
+#futureProducts .sectionHeader p {
+  font-size: 20px;
+  color: white;
+  text-shadow: 4px 4px 10px rgba(0,0,0,0.9);
+}
+
+#futureCardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 30px;
+  transform: translateX(100%);
+  transition: transform 2s ease, opacity 2s ease;
+}
+#futureCardContainer.activeLeft{
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.future-card {
+  height: 300px;
+  width: 220px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 5px 10px 15px rgba(0,0,0,0.5);
+  animation: slideIn 2s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.future-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 5px 10px 15px rgba(255,255,255,0.5), -10px -5px 15px rgba(0,0,0,0.5);
+}
+
+.future-card h2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background: rgba(0,0,0,0.5);
+  font-weight: 900;
+  color: rgb(255, 213, 0);
+  text-shadow: 2px 2px 1px rgba(0,0,0,0.5);
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.future-card img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#footerSection {
+  background-color: #111;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.footerContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footerContent div {
+  flex: 1 1 250px;
+}
+
+.footerLinks ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footerLinks ul li {
+  margin: 8px 0;
+}
+
+.footerLinks ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.footerLinks ul li a:hover {
+  color: #fcd91d;
+}
+
+.footerContact .socialIcons a {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 15px;
+  transition: color 0.3s ease-in-out;
+}
+
+.footerContact .socialIcons a:hover {
+  color: #fcd91d;
+}
+
+.footerBottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  font-size: 14px;
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  nav .logo a {
+    font-size: 24px;
+  }
+  .navLinks li a {
+    font-size: 16px;
+  }
+  .navLinks li a:hover {
+    font-size: 20px;
+  }
+  .authContainer button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  #heroSection {
+    padding: 80px;
+  }
+  #heroSection .heroContent {
+    padding: 60px 40px;
+    max-width: 70%;
+  }
+  #heroSection .heroContent h1 {
+    font-size: 36px;
+  }
+  #heroSection .heroContent p {
+    font-size: 18px;
+  }
+  #heroSection .heroContent button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  nav .logo a {
+    font-size: 20px;
+  }
+  nav .logo a:hover {
+    font-size: 24px;
+  }
+  .authContainer button {
+    font-size: 14px;
+    padding: 6px 12px;
+    width: 100px;
+  }
+  #mobileMenuContainer {
+    gap: 20px;
+    padding: 20px;
+    width: 150px;
+  }
+  .navLinks {
+    gap: 10px;
+  }
+  .navLinks li a:hover {
+    font-size: 18px;
+  }
+  .authContainer {
+    gap: 10px;
+  }
+  .authContainer button {
+    font-size: 14px;
+    padding: 4px 10px;
+    width: 100px;
+  }
+  .authContainer button:hover {
+    font-size: 16px;
+  }
+  #heroSection {
+    padding: 60px;
+  }
+  #heroSection .heroContent {
+    padding: 30px;
+    max-width: 80%;
+    gap: 20px;
+  }
+  #heroSection .heroContent h1 {
+    font-size: 30px;
+  }
+  #heroSection .heroContent p {
+    font-size: 18px;
+  }
+  #heroSection .heroContent button {
+    font-size: 16px;
+    padding: 8px 16px;
+    width: fit-content;
+    align-self: center;
+  }
+}
+@media (max-width: 481px) {
+  nav .logo a {
+    font-size: 18px;
+  }
+  .authContainer button {
+    font-size: 12px;
+    padding: 4px 8px;
+    width: 80px;
+  }
+  #mobileMenuContainer {
+    gap: 14px;
+    padding: 10px;
+    width: 150px;
+  }
+  .navLinks {
+    gap: 10px;
+  }
+  #heroSection {
+    padding: 60px 40px 40px 40px;
+  }
+  #heroSection .heroContent {
+    padding: 26px;
+    max-width: 100%;
+    gap: 10px;
+  }
+  #heroSection .heroContent h1 {
+    font-size: 21px;
+  }
+  #heroSection .heroContent p {
+    font-size: 14px;
+    font-weight: inherit;
+  }
+  #heroSection .heroContent button {
+    margin-top: 10px;
+    font-size: 13px;
+    padding: 6px 12px;
+    width: fit-content;
+    align-self: center;
+  }
+}
+@media (max-width: 320px) {
+  nav .logo a {
+    font-size: 16px;
+  }
+  .authContainer button {
+    font-size: 12px;
+    padding: 2px 6px;
+    width: 60px;
+  }
+  #mobileMenuContainer {
+    gap: 14px;
+    padding: 10px;
+    width: 150px;
+  }
+  .navLinks {
+    gap: 10px;
+  }
+  .navLinks li a {
+    font-size: 12px;
+  }
+  #heroSection {
+    padding: 60px 10px 30px 10px;
+  }
+  #heroSection .heroContent {
+    padding: 20px;
+    max-width: 100%;
+    gap: 8px;
+  }
+  #heroSection .heroContent h1 {
+    font-size: 19px;
+  }
+  #heroSection .heroContent p {
+    font-size: 13px;
+    font-weight: inherit;
+  }
+  #heroSection .heroContent button {
+    margin-top: 9px;
+    font-size: 12px;
+    padding: 4px 10px;
+    width: fit-content;
+    align-self: center;
+  }
+}
+@media (min-width: 200px) and (max-width: 768px) {
+  nav {
+    padding: 19px;
+  }
+  #mobileMenuIcon {
+    display: block;
+  }
+  #navContainer {
+    display: none;
+  }
+  #mobileMenuContainer {
+    display: none;
+    flex-direction: column;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    position: absolute;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    top: 62px;
+    right: 0;
+  }
+  .navLinks {
+    display: flex;
+    flex-direction: column;
+  }
+  .authContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes leftSlideIn {
+  from{
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
