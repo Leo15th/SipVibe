@@ -2,8 +2,8 @@
 const nav = document.querySelector("nav");
 const mobileMenuIcon = document.querySelector("#mobileMenuIcon .fa-bars");
 const mobileMenuContainer = document.getElementById("mobileMenuContainer");
-const cardContainer = document.getElementById("cardContainer")
-const futureCardContainer = document.getElementById("futureCardContainer")
+const cardContainer = document.getElementById("cardContainer");
+const futureCardContainer = document.getElementById("futureCardContainer");
 
 //event listener for mobile menu icon
 mobileMenuIcon.addEventListener("click", () => {
@@ -20,18 +20,25 @@ window.addEventListener("scroll", () => {
   }
 });
 
-window.addEventListener("scroll", ()=>{
-  if (window.scrollY > 350 && window.scrollY<900){
-    cardContainer.classList.add("active")
-  }else{
-    cardContainer.classList.remove("active")
+window.addEventListener("scroll", () => {
+  // if(window.matchMedia("(min-width: 768px) and (max-width:1024)").matches) {
+  //   if (window.scrollY >400 && window.scrollY < 1400){
+  //     cardContainer.classList.add("active")
+  //   } else{
+  //     cardContainer.classList.add("remove")
+  //   }
+  // }
+  if (window.scrollY > 350 && window.scrollY < 900) {
+    cardContainer.classList.add("active");
+  } else {
+    cardContainer.classList.remove("active");
   }
-})
+});
 
-window.addEventListener("scroll", ()=>{
-  if (window.scrollY > 1000 && window.scrollY<1600){
-    futureCardContainer.classList.add("activeLeft")
-  }else{
-    futureCardContainer.classList.remove("activeLeft")
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 1000 && window.scrollY < 1600) {
+    futureCardContainer.classList.add("activeLeft");
+  } else {
+    futureCardContainer.classList.remove("activeLeft");
   }
-})
+});

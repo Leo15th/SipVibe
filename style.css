@@ -20,6 +20,7 @@ nav {
   align-items: center;
   padding: 15px 40px;
   z-index: 100;
+  border: 1px solid red;
 }
 nav .logo a {
   font-size: 30px;
@@ -103,7 +104,8 @@ nav .fa-xmark {
     linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
     url("assets/hero.jpg") center;
   background-size: cover;
-  padding: 150px;
+  border: 1px solid red;
+  padding: 150px 40px;
 }
 #heroSection .heroContent {
   margin: 0 auto;
@@ -149,39 +151,45 @@ nav .fa-xmark {
   border: 1px solid rgb(255, 213, 0);
   box-shadow: 3px 3px 8px rgba(255, 213, 0, 0.3);
 }
-#categorySection{
-  background: linear-gradient(to right bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
+#categorySection {
+  background: linear-gradient(
+    to right bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.8)
+  );
 }
-#categorySection .sectionHeader{
+#categorySection .sectionHeader {
   display: flex;
   flex-direction: column;
   gap: 40px;
   padding: 30px;
 }
-#categorySection .sectionHeader h2{
+#categorySection .sectionHeader h2 {
   font-size: 40px;
   color: white;
   text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9);
 }
-#categorySection .sectionHeader p{
+#categorySection .sectionHeader p {
   font-size: 20px;
   color: white;
   text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9);
 }
-#cardContainer{
+#cardContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   padding: 30px;
   transform: translateX(-100%);
   opacity: 0;
-  transition: transform 2s ease, opacity 2s ease;
+  transition:
+    transform 2s ease,
+    opacity 2s ease;
   gap: 30px;
 }
-#cardContainer.active{
+#cardContainer.active {
   transform: translateX(0);
   opacity: 1;
 }
-#cardContainer .card{
+#cardContainer .card {
   height: 300px;
   width: 200px;
   position: relative;
@@ -190,12 +198,15 @@ nav .fa-xmark {
   box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
-#cardContainer .card:hover{
-  box-shadow: 5px 10px 15px rgba(255, 255, 255, 0.5), -10px -5px 15px rgba(0, 0, 0, 0.5);
+#cardContainer .card:hover {
+  box-shadow:
+    5px 10px 15px rgba(255, 255, 255, 0.5),
+    -10px -5px 15px rgba(0, 0, 0, 0.5);
 }
-#cardContainer .card h2{
+#cardContainer .card h2 {
   position: absolute;
   padding: 10px;
+  font-size: 30px;
   right: 0;
   left: 0;
   bottom: 0;
@@ -205,7 +216,7 @@ nav .fa-xmark {
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
   text-transform: capitalize;
 }
-#cardContainer .card img{
+#cardContainer .card img {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -227,13 +238,13 @@ nav .fa-xmark {
 #futureProducts .sectionHeader h2 {
   font-size: 40px;
   color: white;
-  text-shadow: 4px 4px 10px rgba(0,0,0,0.9);
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9);
 }
 
 #futureProducts .sectionHeader p {
   font-size: 20px;
   color: white;
-  text-shadow: 4px 4px 10px rgba(0,0,0,0.9);
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9);
 }
 
 #futureCardContainer {
@@ -242,9 +253,11 @@ nav .fa-xmark {
   gap: 30px;
   padding: 30px;
   transform: translateX(100%);
-  transition: transform 2s ease, opacity 2s ease;
+  transition:
+    transform 2s ease,
+    opacity 2s ease;
 }
-#futureCardContainer.activeLeft{
+#futureCardContainer.activeLeft {
   transform: translateX(0);
   opacity: 1;
 }
@@ -256,14 +269,18 @@ nav .fa-xmark {
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 5px 10px 15px rgba(0,0,0,0.5);
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.5);
   animation: slideIn 2s forwards;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .future-card:hover {
   transform: translateY(-8px);
-  box-shadow: 5px 10px 15px rgba(255,255,255,0.5), -10px -5px 15px rgba(0,0,0,0.5);
+  box-shadow:
+    5px 10px 15px rgba(255, 255, 255, 0.5),
+    -10px -5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .future-card h2 {
@@ -272,10 +289,10 @@ nav .fa-xmark {
   left: 0;
   right: 0;
   padding: 10px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   font-weight: 900;
   color: rgb(255, 213, 0);
-  text-shadow: 2px 2px 1px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
   text-transform: capitalize;
   text-align: center;
 }
@@ -343,7 +360,6 @@ nav .fa-xmark {
   font-size: 14px;
 }
 
-
 @media (min-width: 768px) and (max-width: 1024px) {
   nav .logo a {
     font-size: 24px;
@@ -375,6 +391,22 @@ nav .fa-xmark {
     font-size: 16px;
     padding: 8px 16px;
   }
+  #categorySection .sectionHeader {
+    gap: 30px;
+    padding: 20px;
+  }
+  #categorySection .sectionHeader h2 {
+    font-size: 34px;
+  }
+  #categorySection .sectionHeader p {
+    font-size: 18px;
+  }
+  #cardContainer {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 2fr));
+  }
+  #cardContainer .card h2 {
+    font-size: 26px;
+  }
 }
 @media (min-width: 481px) and (max-width: 768px) {
   nav .logo a {
@@ -401,6 +433,9 @@ nav .fa-xmark {
   }
   .authContainer {
     gap: 10px;
+  }
+  #mobileMenuIcon {
+    display: block;
   }
   .authContainer button {
     font-size: 14px;
@@ -430,6 +465,27 @@ nav .fa-xmark {
     width: fit-content;
     align-self: center;
   }
+  #categorySection .sectionHeader {
+    gap: 20px;
+    padding: 20px;
+  }
+  #categorySection .sectionHeader h2 {
+    font-size: 34px;
+  }
+  #categorySection .sectionHeader p {
+    font-size: 18px;
+  }
+  #cardContainer {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+    padding: 0;
+  }
+  #cardContainer .card {
+    width: 150px;
+    height: 200px;
+  }
+  #cardContainer .card h2 {
+    font-size: 20px;
+  }
 }
 @media (max-width: 481px) {
   nav .logo a {
@@ -444,6 +500,9 @@ nav .fa-xmark {
     gap: 14px;
     padding: 10px;
     width: 150px;
+  }
+  #mobileMenuIcon {
+    display: block;
   }
   .navLinks {
     gap: 10px;
@@ -565,7 +624,7 @@ nav .fa-xmark {
 }
 
 @keyframes leftSlideIn {
-  from{
+  from {
     transform: translateX(-100%);
   }
   to {

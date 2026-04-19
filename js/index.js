@@ -1,5 +1,11 @@
 function toggleMobileMenu() {
-  mobileMenuIcon.classList.toggle("fa-bars");
+  if (mobileMenuIcon.classList.contains("fa-bars")) {
+    mobileMenuIcon.classList.remove("fa-bars");
+    mobileMenuIcon.classList.add("fa-xmark");
+  } else {
+    mobileMenuIcon.classList.remove("fa-xmark");
+    mobileMenuIcon.classList.add("fa-bars");
+  }
   mobileMenuContainer.style.animation = "slideIn 0.3s forwards";
   if (mobileMenuContainer.style.display === "flex") {
     mobileMenuContainer.style.animation = "slideOut 0.3s forwards";
@@ -10,3 +16,5 @@ function toggleMobileMenu() {
     mobileMenuContainer.style.display = "flex";
   }
 }
+
+const breakPoints = [{ range: [100, 600], class: "mobileActive" }];
