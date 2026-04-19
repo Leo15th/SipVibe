@@ -6,11 +6,11 @@
   user-select: none;
   -moz-user-select: none;
 }
+body, html{
+  overflow: hidden;
+}
 section {
   padding: 40px 60px;
-}
-body {
-  height: 200vh;
 }
 nav {
   position: fixed;
