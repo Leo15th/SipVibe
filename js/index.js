@@ -16,5 +16,3 @@ function toggleMobileMenu() {
     mobileMenuContainer.style.display = "flex";
   }
 }
-
-const breakPoints = [{ range: [100, 600], class: "mobileActive" }];

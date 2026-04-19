@@ -6,7 +6,8 @@
   user-select: none;
   -moz-user-select: none;
 }
-body, html{
+body,
+html {
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -117,7 +118,7 @@ nav .fa-xmark {
   border: 1px solid white;
   padding: 60px;
   border-radius: 20px;
-  max-width: 50%;
+  max-width: 60%;
   cursor: default;
   animation: leftSlideIn 3s forwards;
 }
@@ -186,7 +187,7 @@ nav .fa-xmark {
     opacity 2s ease;
   gap: 30px;
 }
-#cardContainer.active {
+#cardContainer.activeLeft {
   transform: translateX(0);
   opacity: 1;
 }
@@ -198,6 +199,7 @@ nav .fa-xmark {
   overflow: hidden;
   box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  margin: 0 auto;
 }
 #cardContainer .card:hover {
   box-shadow:
@@ -258,18 +260,19 @@ nav .fa-xmark {
     transform 2s ease,
     opacity 2s ease;
 }
-#futureCardContainer.activeLeft {
+#futureCardContainer.activeRight {
   transform: translateX(0);
   opacity: 1;
 }
 
-.future-card {
+#futureCardContainer .card{
   height: 300px;
   width: 220px;
   position: relative;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
+  margin: 0 auto;
   box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.5);
   animation: slideIn 2s forwards;
   transition:
@@ -277,14 +280,14 @@ nav .fa-xmark {
     box-shadow 0.3s ease;
 }
 
-.future-card:hover {
+#futureCardContainer .card:hover {
   transform: translateY(-8px);
   box-shadow:
     5px 10px 15px rgba(255, 255, 255, 0.5),
     -10px -5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.future-card h2 {
+#futureCardContainer .card h2 {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -298,7 +301,7 @@ nav .fa-xmark {
   text-align: center;
 }
 
-.future-card img {
+#futureCardContainer .card img {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -408,6 +411,32 @@ nav .fa-xmark {
   #cardContainer .card h2 {
     font-size: 26px;
   }
+  #futureProducts {
+    padding: 30px 20px;
+  }
+
+  #futureProducts .sectionHeader {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  #futureProducts .sectionHeader h2 {
+    font-size: 34px;
+    color: white;
+  }
+
+  #futureProducts .sectionHeader p {
+    font-size: 18px;
+  }
+
+  #futureCardContainer {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 2fr));
+  }
+
+  #futureCardContainer .card h2 {
+    font-size: 24px;
+    padding: 8px;
+  }
 }
 @media (min-width: 481px) and (max-width: 768px) {
   nav .logo a {
@@ -451,7 +480,7 @@ nav .fa-xmark {
   }
   #heroSection .heroContent {
     padding: 30px;
-    max-width: 80%;
+    max-width: 100%;
     gap: 20px;
   }
   #heroSection .heroContent h1 {
@@ -466,9 +495,11 @@ nav .fa-xmark {
     width: fit-content;
     align-self: center;
   }
+  #categorySection {
+    padding: 10px;
+  }
   #categorySection .sectionHeader {
     gap: 20px;
-    padding: 20px;
   }
   #categorySection .sectionHeader h2 {
     font-size: 34px;
@@ -477,14 +508,42 @@ nav .fa-xmark {
     font-size: 18px;
   }
   #cardContainer {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
-    padding: 0;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 2fr));
   }
   #cardContainer .card {
-    width: 150px;
+    width: 160px;
     height: 200px;
   }
   #cardContainer .card h2 {
+    font-size: 20px;
+  }
+  #futureProducts {
+    padding: 30px 20px;
+  }
+
+  #futureProducts .sectionHeader {
+    gap: 15px;
+    padding: 20px;
+  }
+
+  #futureProducts .sectionHeader h2 {
+    font-size: 34px;
+  }
+
+  #futureProducts .sectionHeader p {
+    font-size: 18px;
+  }
+
+  #futureCardContainer {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 2fr));
+  }
+
+  #futureCardContainer .card{
+    width: 160px;
+    height: 200px;
+  }
+
+  #futureCardContainer .card h2 {
     font-size: 20px;
   }
 }
@@ -530,6 +589,60 @@ nav .fa-xmark {
     width: fit-content;
     align-self: center;
   }
+  #categorySection {
+    padding: 10px;
+  }
+  #categorySection .sectionHeader {
+    gap: 10px;
+  }
+  #categorySection .sectionHeader h2 {
+    font-size: 21px;
+  }
+  #categorySection .sectionHeader p {
+    font-size: 14px;
+  }
+  #cardContainer {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 2fr));
+    padding: 0;
+  }
+  #cardContainer .card {
+    width: 130px;
+    height: 180px;
+  }
+  #cardContainer .card h2 {
+    font-size: 18px;
+    padding: 5px;
+  }
+  #futureProducts {
+    padding: 10px;
+  }
+
+  #futureProducts .sectionHeader {
+    gap: 10px;
+  }
+
+  #futureProducts .sectionHeader h2 {
+    font-size: 21px;
+  }
+
+  #futureProducts .sectionHeader p {
+    font-size: 14px;
+  }
+
+  #futureCardContainer {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 2fr));
+    padding: 0;
+  }
+
+  #futureCardContainer .card{
+    width: 120px;
+    height: 180px;
+  }
+
+  #futureCardContainer .card h2 {
+    font-size: 18px;
+    padding: 5px;
+  }
 }
 @media (max-width: 320px) {
   nav .logo a {
@@ -572,6 +685,61 @@ nav .fa-xmark {
     padding: 4px 10px;
     width: fit-content;
     align-self: center;
+  }
+  #categorySection {
+    padding: 10px;
+  }
+  #categorySection .sectionHeader {
+    gap: 8px;
+  }
+  #categorySection .sectionHeader h2 {
+    font-size: 18px;
+  }
+  #categorySection .sectionHeader p {
+    font-size: 12px;
+  }
+  #cardContainer {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 2fr));
+    padding: 0;
+    gap: 10px;
+  }
+  #cardContainer .card {
+    width: 140px;
+    height: 190px;
+  }
+  #cardContainer .card h2 {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+  #futureProducts {
+    padding: 10px;
+  }
+
+  #futureProducts .sectionHeader {
+    gap: 8px;
+  }
+
+  #futureProducts .sectionHeader h2 {
+    font-size: 18px;
+  }
+
+  #futureProducts .sectionHeader p {
+    font-size: 12px;
+  }
+
+  #futureCardContainer {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 2fr));
+    gap: 10px;
+  }
+
+  #futureCardContainer .card{
+    width: 140px;
+    height: 190px;
+  }
+
+  #futureCardContainer .card h2 {
+    font-size: 13px;
+    padding: 5px 10px;
   }
 }
 @media (min-width: 200px) and (max-width: 768px) {
@@ -621,14 +789,5 @@ nav .fa-xmark {
   }
   to {
     transform: translateX(100%);
-  }
-}
-
-@keyframes leftSlideIn {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
   }
 }
