@@ -26,7 +26,7 @@ window.addEventListener("scroll", () => {
 
   // Mobile
   if (window.matchMedia("(max-width: 480px)").matches) {
-    if (y > 50 && y < 950) {
+    if (y >=0 && y < 950) {
       cardContainer.classList.add("activeLeft");
     } else {
       cardContainer.classList.remove("activeLeft");
