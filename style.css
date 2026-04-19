@@ -7,7 +7,8 @@
   -moz-user-select: none;
 }
 body, html{
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 section {
   padding: 40px 60px;
