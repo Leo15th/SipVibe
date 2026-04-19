@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="style.css?v=194262305">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            user-select: none;
+            -moz-user-select: none;
+        }
+        span, a {
+            text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.9);
+        }
+        nav{
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        #logInMainContainer {
+            height: 100vh;
+            width: 100vw;
+            background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
+    url("assets/hero.jpg") center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #logInForm{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 100px 40px 40px;
+            gap: 30px;
+            border-radius: 20px;
+            text-transform: capitalize;
+            background: transparent;
+            border: 1px solid rgba(255,255,255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 1s ease;
+        }
+        #logInForm h1{
+            position: absolute;
+            align-self: center;
+            top: 0px;
+            background: linear-gradient(to right bottom,
+            rgba(255,200,200,1),
+            rgba(255,100,100,1),
+            rgba(255,50,50,1),
+            rgba(255,0,0,1)
+            );
+            padding: 8px 10px;
+            font-size: 35px;
+            border-radius: 0px 0px 10px 10px;
+            color: white;
+            text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
+        }
+        #logInInputHolder{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        #logInInputHolder input{
+            color: white;
+            font-size: 16px;
+            padding: 8px 10px;
+            border: 1px solid rgba(255,255,255, 0.1);
+            border-radius: 20px;
+            background: transparent;
+            caret-color: rgba(255,255,255, 0.4);
+        }
+        #logInForm input:focus{
+            outline: none;
+        }
+        #recoverLinkContainer{
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        #checkboxContainer{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: default;
+            color: white;
+        }
+        #checkboxContainer input{
+            padding: 0;
+            cursor: pointer;
+        }
+        #checkboxContainer input[type="checkbox"]{
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 1px solid rgba(255,255,255, 0.1);
+            border-radius: 6px;
+            position: relative;
+            padding: 1px;
+        }
+        #checkboxContainer input[type="checkbox"]:checked{
+            background-color: transparent;
+            box-shadow: 2px 2px 2px rgba(255,255,255, 0.4);
+        }
+        #checkboxContainer input[type="checkbox"]:checked::after{
+            content: "✔";
+            color: rgb(255,255,255);
+            text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 0;
+            left: 3px;
+        }
+        #checkboxContainer span{
+            font-size: 14px;
+        }
+        #recoverLinkHolder{
+            padding: 10px;
+            transition: all 1s ease;
+        }
+        #recoverLinkHolder a{
+            font-size: 14px;
+            text-decoration: none;
+            color: red;
+        }
+        #recoverLinkHolder:hover{
+            transform: rotate(360deg);
+            scale: 1.2;
+        }
+        #recoverLinkContainer a:hover{
+            transition: all 1s ease, color 1s ease;
+            color:white;
+        }
+        #loginBtn{
+            padding: 10px 20px;
+            width: 50%;
+            margin: 0 auto;
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+        }
+        #loginBtn:hover{
+            transition: all 1s ease;
+            transform: scale(1.2);
+            color: rgb(179, 179, 179);
+            font-weight: 600;
+            text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+            box-shadow: 4px 4px 4px rgba(255,255,255, 0.4);
+        }
+        #registerLinkHolder{
+            display: flex;
+            gap: 10px;
+            font-size: 14px;
+            color: white;
+            cursor: default;
+        }
+        #registerLinkHolder a{
+            text-decoration: none;
+            color: rgba(0, 255, 0, 1);
+            cursor: pointer;
+        }
+        #registerLinkHolder a:hover{
+            transition: all 0.6s ease;
+            font-size: 16px;
+        }
+        @media (min-width: 768px) and (max-width: 1024px) {
+            #logInForm{
+                scale: 0.9;
+            }
+        }
+        @media (min-width: 481px) and (max-width: 768px) {
+            #logInForm{
+                scale: 0.8;
+            }
+        }
+        @media (max-width: 481px) {
+            #logInForm{
+                scale: 0.7;
+            }
+        }
+        @media (max-width: 320px){
+            #logInForm{
+                scale: 0.6;
+            }
+        }
+        @media (min-width:200px) and (max-width:481px){
+            #recoverLinkContainer{
+                flex-direction: column;
+                gap: 20px;
+            }
+            #loginBtn{
+                width: 100%;
+            }
+            #registerLinkHolder{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+      <div class="logo"><a href="#home">Sip Vibe</a></div>
+      <div id="mobileMenuIcon">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div id="mobileMenuContainer">
+        <ul class="navLinks">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#categorySection">Category</a></li>
+          <li><a href="index.html">Contact Us</a></li>
+        </ul>
+        <div class="authContainer">
+          <button>Register</button>
+        </div>
+      </div>
+      <div id="navContainer">
+        <ul class="navLinks">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#categorySection">Category</a></li>
+          <li><a href="index.html#footerSection">Contact Us</a></li>
+        </ul>
+        <div class="authContainer">
+          <button>Register</button>
+        </div>
+      </div>
+    </nav>
+    <div id="logInMainContainer">
+        <form id="logInForm">
+            <h1>Log In</h1>
+            <div id="logInInputHolder">
+                <input type="text" placeholder="Your Name" autocomplete="off">
+            <input type="email" placeholder="youremail@gmail.com" autocomplete="off">
+            </div>
+            <div id="recoverLinkContainer">
+                <div id="checkboxContainer">
+                    <input type="checkbox">
+                    <span>remember me</span>
+                </div>
+                <div id="recoverLinkHolder">
+                    <a href="#">forgot password?</a>
+                </div>
+            </div>
+            <button id="loginBtn">Log In</button>
+            <div id="registerLinkHolder">
+                <span>don't have an account?</span>
+                <a href="#">register here</a>
+            </div>
+        </form>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/b04755df1d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/auth.js"></script>
+    <script>
+        //event listener for mobile menu icon
+        const mobileMenuIcon = document.querySelector("#mobileMenuIcon .fa-bars");
+mobileMenuIcon.addEventListener("click", () => {
+  if (mobileMenuIcon.classList.contains("fa-bars")) {
+    mobileMenuIcon.classList.remove("fa-bars");
+    mobileMenuIcon.classList.add("fa-xmark");
+  } else {
+    mobileMenuIcon.classList.remove("fa-xmark");
+    mobileMenuIcon.classList.add("fa-bars");
+  }
+  mobileMenuContainer.style.animation = "slideIn 0.3s forwards";
+  if (mobileMenuContainer.style.display === "flex") {
+    mobileMenuContainer.style.animation = "slideOut 0.3s forwards";
+    setTimeout(() => {
+      mobileMenuContainer.style.display = "none";
+    }, 300);
+  } else {
+    mobileMenuContainer.style.display = "flex";
+  }
+});
+    </script>
+</body>
+</html>
