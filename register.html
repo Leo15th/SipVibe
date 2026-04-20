@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css?v=204261543">
+    <style>
+        #registerMainContainer{
+            height: 100vh;
+            width: 100vw;
+            background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
+    url("assets/hero.jpg") center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #registerForm{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 100px 40px 40px;
+            gap: 30px;
+            border-radius: 20px;
+            text-transform: capitalize;
+            background: transparent;
+            border: 1px solid rgba(255,255,255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 1s ease;
+        }
+        #registerForm h1{
+            position: absolute;
+            align-self: center;
+            top: 0px;
+            background: linear-gradient(to right bottom,
+            rgba(255,200,200,1),
+            rgba(255,100,100,1),
+            rgba(255,50,50,1),
+            rgba(255,0,0,1)
+            );
+            padding: 8px 10px;
+            font-size: 35px;
+            border-radius: 0px 0px 10px 10px;
+            color: white;
+            text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
+        }
+        #registerInputHolder{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        #registerInputHolder input{
+            color: white;
+            font-size: 16px;
+            padding: 8px 10px;
+            border: 1px solid rgba(255,255,255, 0.1);
+            border-radius: 20px;
+            background: transparent;
+            caret-color: rgba(255,255,255, 0.4);
+        }
+        #registerForm input:focus{
+            outline: none;
+        }
+        #registerBtn{
+            padding: 10px 20px;
+            width: 50%;
+            margin: 0 auto;
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+        }
+        #registerBtn:hover{
+            transition: all 1s ease;
+            transform: scale(1.2);
+            color: rgb(179, 179, 179);
+            font-weight: 600;
+            text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+            box-shadow: 4px 4px 4px rgba(255,255,255, 0.4);
+        }
+        #loginLinkHolder{
+            display: flex;
+            gap: 30px;
+        }
+        #loginLinkHolder span{
+            color: white;
+            font-size: 16px;
+        }
+        #loginLinkHolder .aholder{
+            transition: all 2s ease;
+        }
+        #loginLinkHolder .aholder:hover{
+            transform: rotate(360deg);
+            scale: 1.5;
+        }
+        #loginLinkHolder a{
+            font-size: 16px;
+            text-decoration: none;
+            color: greenyellow;
+        }
+        #loginLinkHolder a:hover{
+            transition: all 1s ease, color 1s ease;
+            color: white;
+        }
+        @media (min-width: 768px) and (max-width: 1024px) {
+            #registerForm{
+                scale: 0.9;
+            }
+        }
+        @media (min-width: 481px) and (max-width: 768px) {
+            #registerForm{
+                scale: 0.8;
+            }
+        }
+        @media (min-width:200px) and (max-width:481px){
+            #registerBtn{
+                width: 100%;
+            }
+            #loginLinkHolder{
+                flex-direction: column;
+            }
+            #registerForm{
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+      <div class="logo"><a href="index.html">Sip Vibe</a></div>
+      <div id="mobileMenuIcon">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div id="mobileMenuContainer">
+        <ul class="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#categorySection">Category</a></li>
+          <li><a href="#footerSection">Contact Us</a></li>
+        </ul>
+        <div class="authContainer">
+          <button><a href="login.html">Log In</a></button>
+          <button>Register</button>
+        </div>
+      </div>
+      <div id="navContainer">
+        <ul class="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#categorySection">Category</a></li>
+          <li><a href="#footerSection">Contact Us</a></li>
+        </ul>
+        <div class="authContainer">
+          <button><a href="login.html">Log In</a></button>
+        </div>
+      </div>
+    </nav>
+    <div id="registerMainContainer">
+        <form id="registerForm">
+            <h1>Register</h1>
+            <div id="registerInputHolder">
+                <input type="text" placeholder="Your Name" autocomplete="off">
+                <input type="email" placeholder="youremail@gmail.com" autocomplete="off">
+                <input type="password" placeholder="Your Password" autocomplete="off">
+                <input type="password" placeholder="Confirm Password" autocomplete="off">
+            </div>
+            <button id="registerBtn">Register</button>
+            <div id="loginLinkHolder">
+                <span>Already have an account?</span>
+                <div class="aholder"><a href="login.html">Log In Here</a></div>
+            </div>
+            <!-- <div id="logInInputHolder">
+                <input type="text" placeholder="Your Name" autocomplete="off">
+            <input type="email" placeholder="youremail@gmail.com" autocomplete="off">
+            <input type="password" placeholder="your password" autocomplete="off">
+            </div>
+            <div id="recoverLinkContainer">
+                <div id="checkboxContainer">
+                    <input type="checkbox">
+                    <span>remember me</span>
+                </div>
+                <div id="recoverLinkHolder">
+                    <a href="#">forgot password?</a>
+                </div>
+            </div>
+            <button id="loginBtn">Log In</button>
+            <div id="registerLinkHolder">
+                <span>don't have an account?</span>
+                <a href="#">register here</a>
+            </div> -->
+        </form>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/b04755df1d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/auth.js"></script>
+
+
+</body>
+</html>

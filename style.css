@@ -5,6 +5,7 @@
   scroll-behavior: smooth;
   user-select: none;
   -moz-user-select: none;
+  -webkit-user-select: none;
 }
 body,
 html {
@@ -91,9 +92,10 @@ nav .fa-xmark {
   color: white;
   border-radius: 4px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 .authContainer button:hover {
-  scale: 1.1;
+  transform: scale(1.1);
   margin: 0 10px;
   font-size: 18px;
   font-weight: 700;
