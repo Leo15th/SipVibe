@@ -32,15 +32,17 @@ nav .logo a {
   padding: 10px;
   cursor: pointer;
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, color 0.2 ease;
 }
 nav .logo a:hover {
   font-size: 34px;
   color: rgb(255, 213, 0);
   text-shadow: 4px 4px 8px rgba(255, 213, 0, 0.5);
+  transform: scale(1.1);
 }
 nav .logo a:active {
-  font-size: 28px;
   color: rgb(255, 213, 0);
+  transform: scale(0.95);
 }
 #mobileMenuIcon {
   display: none;
