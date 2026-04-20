@@ -778,10 +778,13 @@ nav .fa-xmark {
   .navLinks {
     display: flex;
     flex-direction: column;
+    padding: 10px;
+    gap: 20px;
   }
   .authContainer {
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
   }
 }
 
