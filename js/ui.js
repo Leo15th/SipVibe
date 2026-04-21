@@ -5,10 +5,66 @@ const mobileMenuContainer = document.getElementById("mobileMenuContainer");
 const cardContainer = document.getElementById("cardContainer")
 const futureCardContainer = document.getElementById("futureCardContainer")
 
+//reference register form 
+const registerForm = document.getElementById("registerForm");
+ const registerNameInput = document.getElementById("registerNameInput");
+ const registerEmailInput = document.getElementById("registerEmailInput");
+ const registerPasswordInput = document.getElementById("registerPasswordInput");
+ const registerPasswordConfirmInput = document.getElementById("registerPasswordConfirmInput");
+ const registerBtn = document.getElementById("registerBtn")
+ const registerInputs = document.querySelectorAll("#registerInputHolder input")
+
+ //reference login form
+const logInForm = document.getElementById("logInForm")
+const logInNameInput = document.getElementById("logInNameInput")
+const logInEmailInput = document.getElementById("logInEmailInput")
+const logInPasswordInput = document.getElementById("logInPasswordInput")
+const loginBtn = document.getElementById("loginBtn") 
+
 //event listener for mobile menu icon
 mobileMenuIcon.addEventListener("click", () => {
-  toggleMobileMenu();
+  if (mobileMenuIcon.classList.contains("fa-bars")) {
+    mobileMenuIcon.classList.remove("fa-bars");
+    mobileMenuIcon.classList.add("fa-xmark");
+  } else {
+    mobileMenuIcon.classList.remove("fa-xmark");
+    mobileMenuIcon.classList.add("fa-bars");
+  }
+  mobileMenuContainer.style.animation = "slideIn 0.3s forwards";
+  if (mobileMenuContainer.style.display === "flex") {
+    mobileMenuContainer.style.animation = "slideOut 0.3s forwards";
+    setTimeout(() => {
+      mobileMenuContainer.style.display = "none";
+    }, 300);
+  } else {
+    mobileMenuContainer.style.display = "flex";
+  }
 });
+
+//event listener for register page
+if(registerForm){
+  registerForm.addEventListener("submit",(event)=>{
+    event.preventDefault();
+    console.log("submit")
+    if (registerPasswordInput.value !== registerPasswordConfirmInput.value) {
+      return;
+    } else {
+      const {userName, userEmail, userPassword} = getUser();
+      saveUser(userName, userEmail, userPassword);
+      registerForm.reset();
+    }
+  })
+}
+
+//event listener for login page
+if(logInForm){
+  logInForm.addEventListener("submit", (event)=>{
+    event.preventDefault();
+    userLogin();
+  })
+}
+
+//window scroll event
 //event listener for scroll event
 window.addEventListener("scroll", () => {
   if (window.scrollY > 30) {
@@ -51,7 +107,6 @@ window.addEventListener("scroll", () => {
     }
   }
 });
-
 
 //for futurecardContainer
 window.addEventListener("scroll", () => {

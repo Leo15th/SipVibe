@@ -225,9 +225,9 @@
         <form id="logInForm">
             <h1>Log In</h1>
             <div id="logInInputHolder">
-                <input type="text" placeholder="Your Name" autocomplete="off">
-            <input type="email" placeholder="youremail@gmail.com" autocomplete="off">
-            <input type="password" placeholder="your password" autocomplete="off">
+                <input type="text" placeholder="Your Name" autocomplete="off" id="logInNameInput">
+            <input type="email" placeholder="youremail@gmail.com" autocomplete="off" id="logInEmailInput">
+            <input type="password" placeholder="your password" autocomplete="off" id="logInPasswordInput">
             </div>
             <div id="recoverLinkContainer">
                 <div id="checkboxContainer">
@@ -250,27 +250,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/auth.js"></script>
-    <script>
-        //event listener for mobile menu icon
-        const mobileMenuIcon = document.querySelector("#mobileMenuIcon .fa-bars");
-mobileMenuIcon.addEventListener("click", () => {
-  if (mobileMenuIcon.classList.contains("fa-bars")) {
-    mobileMenuIcon.classList.remove("fa-bars");
-    mobileMenuIcon.classList.add("fa-xmark");
-  } else {
-    mobileMenuIcon.classList.remove("fa-xmark");
-    mobileMenuIcon.classList.add("fa-bars");
-  }
-  mobileMenuContainer.style.animation = "slideIn 0.3s forwards";
-  if (mobileMenuContainer.style.display === "flex") {
-    mobileMenuContainer.style.animation = "slideOut 0.3s forwards";
-    setTimeout(() => {
-      mobileMenuContainer.style.display = "none";
-    }, 300);
-  } else {
-    mobileMenuContainer.style.display = "flex";
-  }
-});
-    </script>
+    <script src="js/ui.js"></script>
 </body>
 </html>

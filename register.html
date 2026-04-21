@@ -157,35 +157,16 @@
         <form id="registerForm">
             <h1>Register</h1>
             <div id="registerInputHolder">
-                <input type="text" placeholder="Your Name" autocomplete="off">
-                <input type="email" placeholder="youremail@gmail.com" autocomplete="off">
-                <input type="password" placeholder="Your Password" autocomplete="off">
-                <input type="password" placeholder="Confirm Password" autocomplete="off">
+                <input type="text" id="registerNameInput" placeholder="Your Name" autocomplete="off">
+                <input type="email" id="registerEmailInput" placeholder="youremail@gmail.com" autocomplete="off">
+                <input type="password" id="registerPasswordInput" placeholder="Your Password" autocomplete="off">
+                <input type="password" id="registerPasswordConfirmInput" placeholder="Confirm Password" autocomplete="off">
             </div>
             <button id="registerBtn">Register</button>
             <div id="loginLinkHolder">
                 <span>Already have an account?</span>
                 <div class="aholder"><a href="login.html">Log In Here</a></div>
             </div>
-            <!-- <div id="logInInputHolder">
-                <input type="text" placeholder="Your Name" autocomplete="off">
-            <input type="email" placeholder="youremail@gmail.com" autocomplete="off">
-            <input type="password" placeholder="your password" autocomplete="off">
-            </div>
-            <div id="recoverLinkContainer">
-                <div id="checkboxContainer">
-                    <input type="checkbox">
-                    <span>remember me</span>
-                </div>
-                <div id="recoverLinkHolder">
-                    <a href="#">forgot password?</a>
-                </div>
-            </div>
-            <button id="loginBtn">Log In</button>
-            <div id="registerLinkHolder">
-                <span>don't have an account?</span>
-                <a href="#">register here</a>
-            </div> -->
         </form>
     </div>
     <script
@@ -193,7 +174,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/auth.js"></script>
-
+    <script src="js/ui.js"></script>
 
 </body>
 </html>
