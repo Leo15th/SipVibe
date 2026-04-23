@@ -30,8 +30,10 @@ function userLogin(){
     const userPassword = logInPasswordInput.value.trim();
     if(checkUser(userName, userEmail, userPassword)){
         alert("login successful")
+        //set the current user to the local storage
+        localStorage.setItem("currentUser", JSON.stringify({userName, userEmail}));
+        window.location.href = "users.html"
     } else{
-        alert("we dont have account with this info")
-        return;
+        alert("Invalid credentials.");
     }
 }

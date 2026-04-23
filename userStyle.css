@@ -1,0 +1,125 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+body{
+    height: 200vh;
+}
+nav{
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 60px;
+    border-bottom: 3px solid rgba(170, 170, 170, 0.5);
+    background: red;
+}
+#userProfileDisplay{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+#userProfileDisplay img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+#userProfileDisplay span{
+    font-size: 20px;
+    font-weight: 900;
+}
+#cartContainer{
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#cartIconContainer .fa-cart-shopping{
+    font-size: 30px;
+    color: black;/*change to white later*/
+    cursor: pointer;
+}
+#cartIconContainer span{
+    cursor: pointer;
+}
+#cartCountContainer{
+    width: 20px;
+    height: 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    position:absolute;
+    top: 5px;
+    right: 28px;
+}
+#cartCount{
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    font-size: 16px;
+    font-weight: 900;
+    color: black;
+}
+
+#tabCategorySection {
+    padding: 100px 0;
+    border: 1px solid red;
+    background-color: grey;
+}
+#categoryBtnsContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+#categoryBtnsContainer button{
+    width: 100%;
+    font-size: 18px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#categoryBtnsContainer .tabBtn.active{
+    scale: 1.1;
+  margin: 0 10px;
+  font-size: 20px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgb(255, 213, 0);
+  box-shadow: 3px 3px 8px rgba(255, 213, 0, 0.3);
+}   
+
+.tabContent{
+    border: 1px solid red;
+    padding: 20px;
+    display: none;
+}
+.tabContent.active{
+    display: block;
+}
+
+
+
+
+#test{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 40px;
+}
+#atcBtn,#rfcBtn{
+    padding: 30px;
+}

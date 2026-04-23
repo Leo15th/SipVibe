@@ -111,6 +111,11 @@
             #registerForm{
                 scale: 0.8;
             }
+            #registerInputHolder{
+            display: grid;
+            grid-template-columns:1fr;
+            gap: 30px;
+        }
         }
         @media (min-width:200px) and (max-width:481px){
             #registerBtn{
@@ -122,20 +127,25 @@
             #registerForm{
                 width: 90%;
             }
+            #registerInputHolder{
+            display: grid;
+            grid-template-columns:1fr;
+            gap: 20px;
+        }
         }
     </style>
 </head>
 <body>
     <nav>
-      <div class="logo"><a href="index.html">Sip Vibe</a></div>
+      <div class="logo"><a href="index.html#home">Sip Vibe</a></div>
       <div id="mobileMenuIcon">
         <i class="fa-solid fa-bars"></i>
       </div>
       <div id="mobileMenuContainer">
         <ul class="navLinks">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#categorySection">Category</a></li>
-          <li><a href="#footerSection">Contact Us</a></li>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#categorySection">Category</a></li>
+          <li><a href="index.html#footerSection">Contact Us</a></li>
         </ul>
         <div class="authContainer">
           <button><a href="login.html">Log In</a></button>

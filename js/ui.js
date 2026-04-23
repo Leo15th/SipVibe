@@ -47,11 +47,14 @@ if(registerForm){
     event.preventDefault();
     console.log("submit")
     if (registerPasswordInput.value !== registerPasswordConfirmInput.value) {
+      alert("not the sam password")
       return;
     } else {
       const {userName, userEmail, userPassword} = getUser();
       saveUser(userName, userEmail, userPassword);
       registerForm.reset();
+      alert("Register Successful")
+      window.location.href = "login.html"
     }
   })
 }
