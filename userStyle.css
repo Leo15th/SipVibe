@@ -23,9 +23,9 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 60px;
+    padding: 4px 60px;
     border-bottom: 3px solid rgba(170, 170, 170, 0.5);
-    background: red;
+    background-color: black;
     z-index: 1000;
 }
 #userProfileDisplay{
@@ -38,10 +38,12 @@ nav{
     width: 50px;
     height: 50px;
     border-radius: 100%;
+    cursor: not-allowed;
 }
 #userProfileDisplay span{
     font-size: 20px;
     font-weight: 900;
+    color: white;
 }
 #cartAndSetting{
     display: flex;
@@ -57,8 +59,8 @@ nav{
 }
 #cartIconContainer .fa-cart-shopping{
     font-size: 30px;
-    color: black;/*change to white later*/
-    cursor: pointer;
+    color: white;
+    cursor: not-allowed;
 }
 #cartIconContainer span{
     cursor: pointer;
@@ -80,12 +82,12 @@ nav{
     -moz-user-select: none;
     font-size: 16px;
     font-weight: 900;
-    color: black;
+    color: white;
 }
 #settingContainer .fa-gear{
     font-size: 30px;
-    color: black;/*change to white later*/
-    cursor: pointer;
+    color: white;
+    cursor: not-allowed;
 }
 
 #tabCategorySection {
@@ -162,7 +164,7 @@ nav{
 }
 .tabContent .card img{
     width: 100%;
-    aspect-ratio: 4/3;
+    aspect-ratio: 3/4;
     height: 100%;
     object-fit: cover;
 }

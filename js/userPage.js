@@ -6,6 +6,19 @@ const cartIcon = document.querySelector("#cartContainer .fa-cart-shopping")
 const cartCountContainer = document.getElementById("cartCountContainer")
 const cartCountSpan = document.getElementById("cartCount");
 
+cartIcon.addEventListener("click", ()=>{
+    alert("this feature will come on the next version")
+})
+
+//reference
+const setting = document.querySelector("#settingContainer .fa-gear")
+setting.addEventListener("click",()=>{
+    alert("this feature will come on the version 2")
+})
+
+const profileSetting = document.querySelector("#userProfileDisplay img")
+profileSetting.addEventListener("click", ()=> alert("this feature will come on the version 2"))
+
 //reference test btn
 const atcBtn = document.getElementById("atcBtn")
 const rfcBtn = document.getElementById("rfcBtn")
@@ -13,6 +26,7 @@ const rfcBtn = document.getElementById("rfcBtn")
 //reference tab category
 const tabBtns = document.querySelectorAll("#categoryBtnsContainer .tabBtn")
 const tabContents = document.querySelectorAll("#tabContentHolder .tabContent")
+
 
 let userKey;
 
