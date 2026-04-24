@@ -7,8 +7,14 @@
     -webkit-user-select: none;
     -webkit-user-drag: none;
 }
-body{
-    height: 200vh;
+body , html{
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background:
+    linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
+    url("assets/hero.jpg") center;
+  background-size: cover;
 }
 nav{
     position: fixed;
@@ -20,6 +26,7 @@ nav{
     padding: 10px 60px;
     border-bottom: 3px solid rgba(170, 170, 170, 0.5);
     background: red;
+    z-index: 1000;
 }
 #userProfileDisplay{
     position: relative;
@@ -35,6 +42,11 @@ nav{
 #userProfileDisplay span{
     font-size: 20px;
     font-weight: 900;
+}
+#cartAndSetting{
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 #cartContainer{
     padding: 20px;
@@ -70,30 +82,43 @@ nav{
     font-weight: 900;
     color: black;
 }
+#settingContainer .fa-gear{
+    font-size: 30px;
+    color: black;/*change to white later*/
+    cursor: pointer;
+}
 
 #tabCategorySection {
     padding: 100px 0;
-    border: 1px solid red;
-    background-color: grey;
 }
 #categoryBtnsContainer{
     display: flex;
     justify-content: space-between;
     width: 100%;
+    padding: 0px 16pxx;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-snap-type:x mandatory;
+}
+#categoryBtnsContainer::-webkit-scrollbar{
+    display: none;
 }
 #categoryBtnsContainer button{
+    flex: auto;
     width: 100%;
     font-size: 18px;
-  padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid white;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-}
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    scroll-snap-align: start;
+    }
 
 #categoryBtnsContainer .tabBtn.active{
-    scale: 1.1;
   margin: 0 10px;
   font-size: 20px;
   font-weight: 700;
@@ -102,17 +127,87 @@ nav{
   box-shadow: 3px 3px 8px rgba(255, 213, 0, 0.3);
 }   
 
+#tabContentHolder{
+    overflow-y: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100px;
+    bottom: 0;
+    scrollbar-width: none;
+}
+#tabContentHolder::-webkit-scrollbar{
+    display: none;
+}
 .tabContent{
-    border: 1px solid red;
-    padding: 20px;
+    padding: 40px;
     display: none;
 }
 .tabContent.active{
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
 }
 
-
-
+.tabContent .card{
+    border: 1px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    max-width: 400px;
+}
+.tabContent .card img{
+    width: 100%;
+    aspect-ratio: 4/3;
+    height: 100%;
+    object-fit: cover;
+}
+.tabContent .card .cardDescriptionHolder{
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+.tabContent .card .cardDescriptionHeader{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.tabContent .card .cardDescriptionHeader h3,
+.tabContent .card .cardDescriptionHeader span{
+    font-weight: 900px;
+    color: white;
+}
+.tabContent .card .cardDescriptionHolder button{
+    width: 100%;
+    padding: 4px 6px;
+    border: none;
+    cursor: pointer;
+}
+.quantityControl {
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.quantityControl button{
+    cursor: pointer;
+}
+.quantityControl span{
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+    text-align: center;
+    background-color: grey;
+}
 
 #test{
     display: flex;
@@ -122,4 +217,26 @@ nav{
 }
 #atcBtn,#rfcBtn{
     padding: 30px;
+}
+
+/* test */
+#testBtn{ 
+    display: block;
+    cursor: pointer;
+}
+@media(max-width: 768px){
+    .tabContent.active {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  .tabContent .card img {
+    aspect-ratio: 1 / 1; /* square images look cleaner on small screens */
+  }
+  #categoryBtnsContainer {
+    padding: 0 12px;
+  }
+}
+@media (max-width: 480px) {
+  #categoryBtnsContainer {
+    padding: 0 8px;
+  }
 }

@@ -14,30 +14,37 @@
             <img src="assets/blankProfile.jpg" alt="">
             <span id="userNameSpan">User Name</span>
         </div>
-        <div id="cartContainer">
-            <div id="cartIconContainer">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span>Setting</span>
+        <div id="cartAndSetting">
+            <div id="cartContainer">
+                <div id="cartIconContainer">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div id="cartCountContainer">
+                    <span id="cartCount"></span>
+                </div>
             </div>
-            <div id="cartCountContainer">
-                <span id="cartCount"></span>
+            <div id="settingContainer">
+                <i class="fa-solid fa-gear"></i>
+                <div id="sideSettingContainer">
+                    
+                </div>
             </div>
         </div>
     </nav>
 
     <section id="tabCategorySection">
         <div id="categoryBtnsContainer">
-            <button class="tabBtn active" onclick="opentab(event, 'Shake')">Shake</button>
-            <button class="tabBtn" onclick="opentab(event, 'Smoothie')">Smoothie</button>
-            <button class="tabBtn" onclick="opentab(event, 'Boba')">Boba</button>
-            <button class="tabBtn" onclick="opentab(event, 'Mocktail')">Mocktail</button>
-            <button class="tabBtn" onclick="opentab(event, 'Coffee')">Coffee</button>
-            <button class="tabBtn" onclick="opentab(event, 'Tea')">Tea</button>
+            <button class="tabBtn active" data-category="Shake" onclick="opentab(event, 'Shake')">Shake</button>
+            <button class="tabBtn" data-category="Smoothie" onclick="opentab(event, 'Smoothie')">Smoothie</button>
+            <button class="tabBtn" data-category="Boba" onclick="opentab(event, 'Boba')">Boba</button>
+            <button class="tabBtn" data-category="Mocktail" onclick="opentab(event, 'Mocktail')">Mocktail</button>
+            <button class="tabBtn" data-category="Coffee" onclick="opentab(event, 'Coffee')">Coffee</button>
+            <button class="tabBtn" data-category="Tea" onclick="opentab(event, 'Tea')">Tea</button>
         </div>
 
         <div id="tabContentHolder">
             <div id="Shake" class="tabContent active">
-                here will have the shake items
+
             </div>
             <div id="Smoothie" class="tabContent">
                 here will have the smoothie items
@@ -57,16 +64,9 @@
         </div>
     </section>
 
-
-
-
-    <div id="test">
-        <button id="atcBtn">add to cart</button>
-        <button id="rfcBtn">remove from cart</button>
-    </div>
-
     <script src="https://kit.fontawesome.com/b04755df1d.js" crossorigin="anonymous"></script>
     <script src="js/auth.js"></script>
+    <script src="js/data.js"></script>
     <script src="js/userPage.js"></script>
 </body>
 
