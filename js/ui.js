@@ -80,12 +80,16 @@ window.addEventListener("scroll", () => {
 });
 
 //for card container
+if(window.matchMedia("(max-width: 480px)").matches) {
+cardContainer.classList.add("show")} else{
+cardContainer.classList.remove("show")}
+
 window.addEventListener("scroll", () => {
   const y = window.scrollY;
 
   // Mobile
   if (window.matchMedia("(max-width: 480px)").matches) {
-    cardContainer.classList.add("show")
+    
     if (y >=0 && y < 950) {
       cardContainer.classList.add("activeLeft");
     } else {
@@ -95,7 +99,6 @@ window.addEventListener("scroll", () => {
 
   // Tablet
   else if (window.matchMedia("(min-width: 768px) and (max-width: 1024px)").matches) {
-    cardContainer.classList.remove("show")
     if (y > 250 && y < 1470) {
       cardContainer.classList.add("activeLeft");
     } else {
